@@ -99,6 +99,7 @@ public:
 					continue;
 				}
 
+				// Note: Error!!! to_string loss "0"!!!
 				// num_string = to_string(num);
 				ss.str("");
 				ss.clear();
