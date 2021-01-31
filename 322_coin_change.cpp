@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution_dp {
 public:
     int inf_max = 10001;
     vector< int > memory = vector<int>(10001,-1);
@@ -51,6 +51,37 @@ public:
         return ret;
     }
 };
+
+
+class Solution {
+public:
+
+    int coinChange(vector<int>& coins, int amount)
+    {
+        int invalid = amount+1;
+        int I = amount + 1;
+        vector< int > DP(I, invalid);
+        DP[0] = 0;
+        for(int i=0; i<I; i++)
+        {
+            for(int k=0; k<coins.size(); k++)
+            {
+                if(i<coins[k])
+                {
+                    continue;
+                }
+                DP[i] = min(DP[i], DP[i-coins[k]]+1);
+            }
+        }
+        int ret = DP[amount];
+        if(invalid == ret)
+        {
+            ret = -1;
+        }
+        return ret;
+    }
+};
+
 
 int main()
 {
