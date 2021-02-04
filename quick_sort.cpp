@@ -27,7 +27,7 @@ void quick_sort_recur(vector<int>&vect, int L, int R)
 			i++;
 			if (i == j)
 			{
-				vect[i] = middle;
+				vect[j] = middle;
 				break;
 			}
 		}
@@ -60,19 +60,19 @@ void quick_sort(vector<int>&vect)
 	quick_sort_recur(vect, 0, size - 1);
 }
 
-//int main()
-//{
-//	vector<int> numbers{ 0, 1, 2, 3, -1 };
-//	/*vector<int> numbers{  };*/
-//	/*vector<int> numbers{0,0,0,0};*/
-//	/*vector<int> numbers{ 1, 1, 3, 3 };*/
-//	/*vector<int> numbers{ 3, 3, 2, 1 };*/
-//	/*vector<int> numbers{ 3, 2, -10, -100 };*/
-//	quick_sort(numbers);
-//	for (auto &tmp : numbers)
-//	{
-//		cout << tmp << endl;
-//	}
-//
-//	return 0;
-//}
+int main()
+{
+	vector<int> numbers{ 0, 1, 2, 3, -1 };
+	/*vector<int> numbers{  };*/
+	/*vector<int> numbers{0,0,0,0};*/
+	/*vector<int> numbers{ 1, 1, 3, 3 };*/
+	/*vector<int> numbers{ 3, 3, 2, 1 };*/
+	/*vector<int> numbers{ 3, 2, -10, -100 };*/
+	quick_sort(numbers);
+	for (auto &tmp : numbers)
+	{
+		cout << tmp << endl;
+	}
+
+	return 0;
+}
